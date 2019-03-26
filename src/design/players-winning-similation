@@ -1,0 +1,58 @@
+@startuml
+
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+skinparam maxmessagesize 60
+skinparam sequenceParticipant underline
+
+actor Players as A
+
+
+participant "GamePente" 
+activate GamePente
+
+
+participant "ALLotherFUNCTION"
+participant "WinDialog"
+
+
+GamePente -> ALLotherFUNCTION: setMove(move)
+activate ALLotherFUNCTION
+
+
+
+A -> GamePente: place()
+activate A
+
+deactivate ALLotherFUNCTION
+GamePente -> ALLotherFUNCTION: getState()
+
+activate ALLotherFUNCTION
+
+ALLotherFUNCTION --> GamePente: state
+deactivate ALLotherFUNCTION
+
+A --> GamePente: Done
+deactivate A
+
+
+GamePente -> WinDialog
+activate WinDialog
+GamePente -> A: wins
+activate A
+deactivate A
+WinDialog -->A:show views
+deactivate WinDialog
+
+GamePente -> A: ALLotherFUNCTION over
+activate A
+
+deactivate A
+
+
+
+
+
+
+deactivate GamePente
+@enduml

@@ -1,0 +1,22 @@
+message send protocol
+FROM SERVER TO CLIENT
+0-BoardUpdate(FROM SERVER TO CLIENT)
+	int numCaptures
+	ArrayList<points> captures
+	turnstatus
+	blackCaptures
+	whiteCaptures
+1-IllegalMove(FROM SERVER TO CLIENT)
+2-PlayerOne wins(FROM SERVER TO CLIENT)
+3-PlayerTwo wins(FROM SERVER TO CLIENT)
+4-Lobby Update
+5-challenged(auto accept)
+	your turn
+FROM CLIENT TO SERVER
+0-Return to lobby
+1-BoardUpdate
+	String "x,y"
+2-ChooseOpponent
+	String "Opponent Name"
+3-ChooseGame to watch
+	String "Game Title"

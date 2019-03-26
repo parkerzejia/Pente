@@ -1,0 +1,7 @@
+1. All JButtons changed to JRadioButtons
+2. Action listener segment for JRadioButtons for lobbyPanel created in PenteClient (no specific code yet)
+3. **NEEDED** A getter for retrieving the arrays of players and games lobbyPanel reference in NewPenteWindow 
+4. Getter method in lobbyPanel for retrieving playerButtons_ and gameButtons_ Hashtables
+5. Set up action listeners for buttons in lobbyPanel (NOT SURE IF THIS IS CORRECT)
+6. Player and game methods shared with PenteClient
+7. **RECOMMENDATION** place player and game buttons in a button group so limit selections to one per group

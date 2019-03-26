@@ -1,0 +1,8 @@
+actor user0 #red
+
+Client -> Server: Authentication Request
+Server --> Client: Authentication Response
+    
+Client -> Server: Another authentication Request
+Client <-- Server: Another authentication Response
+@enduml

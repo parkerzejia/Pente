@@ -1,0 +1,19 @@
+@startuml
+:Professors: as Supervisor
+Supervisor ->(Start the Server)
+note "I start the connection.\n server start lisenning..." as N1
+(Start the Server) .. N1
+(Start the Server) ->(Start in the LOBBY)
+User0 -> (Start in the LOBBY)
+User1 --> (Start in the LOBBY)
+User2-> (Start in the LOBBY)
+User3 ---> (Start in the LOBBY)
+Usern1..n2..n ---> (Start in the LOBBY)
+
+note right of Supervisor : I am the supervisor of the server
+note right of (Start in the LOBBY):The users start pairing\n in pair....\n user1-user2\nuser3-user4\nusern2-usern...
+
+note "we start the games. multiple pairs are in process" as N2
+(Start in the LOBBY) .. N2
+N2 .. (IN Use)
+@enduml

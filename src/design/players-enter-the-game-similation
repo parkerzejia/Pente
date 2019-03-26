@@ -1,0 +1,50 @@
+@startuml
+
+
+
+actor user0 #red
+
+user0 -> NewPenteWindow: user0 request it to open
+NewPenteWindow -> user0: ok, we start the program,\nnow choose the game version: \n Local /Network ??
+user0 -> NewPenteWindow: Local/NetWork????
+== network ==
+NewPenteWindow -> lobbyPanel:Request of Network
+lobbyPanel -> lobbyPanel:selecting users \n to play with me
+lobbyPanel -> PenteClient: request connection
+ loop n times(keep sending \n the necessary information)
+activate multiServer
+activate PenteClient  
+
+PenteClient ->multiServer: request for connection, sending the port number...
+multiServer -->PenteClient: socket is lisenning... and accepted the connection
+multiServer <-[#red]> PenteClient: **connection established**
+multiServer->PenteWindow: start playing the game
+PenteWindow->user0: start playing the game, showing view
+loop n times
+user0-> PenteWindow: placing pieces
+PenteWindow-> user0:showing the pieces...
+
+end
+note right : In this Diagram, I am showing the step when user first enter the game, \n the specific steps about networking and local play is not showing here. \n how do player plece the piece is not showing here.\n The method of responding the multiserver package is abstract and not clear.
+deactivate PenteClient
+deactivate multiServer
+	    end
+== local ==
+NewPenteWindow -> NewGameDialog:  Request of Local
+NewGameDialog -> GamePenteLocal:  Request of local
+GamePenteLocal ->PenteWindow: actives local 
+activate PenteWindow
+GamePenteLocal ->PlayPane: actives local
+activate PlayPane
+GamePenteLocal->Stone: actives local
+activate Stone
+GamePenteLocal->PenteUtil: actives local
+activate PenteUtil
+
+note over user0, PenteUtil
+	This is placing piecies loop
+	it won't be showed in the enter-game-simulation
+end note
+
+
+@enduml

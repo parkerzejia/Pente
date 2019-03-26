@@ -1,0 +1,33 @@
+OBJECT OF THE GAME:
+Win by placing five (or more) of your stones in a row, vertically, horizontally, 
+or diagonally, with no empty points between them. Or, win by capturing five (or more) 
+pairs of your opponent's stones.
+
+HOW TO PLAY:
+Play starts with the board completely clear of stones. The first player (black) begins 
+the game by playing one stone on the center point. Thereafter the players take turns 
+placing their stones, one at a time, on any empty intersection. The stones are placed 
+on the intersections of the lines (including the very edge of the board), rather than 
+in the squares. Once played, a stone cannot be moved again, except when removed by a 
+capture. Players alternate turns adding new stones to the board, building up their 
+positions, until one player wins.
+
+CAPTURES:
+Whenever your opponent has two stones (and only two) which are adjacent, those stones 
+are vulnerable to capture. The pair can be captured by bracketing its two ends with 
+your own stones. The captured stones are removed from the board.
+
+Captures can be made vertically, horizontally, or diagonally, and multiple captures 
+can occur on a single move.
+
+WINNING THE GAME:
+The game ends immediately when one player captures five pairs, or places five stones 
+in a row. The opposing player has no last chance to make a final move.
+When a player obtains an unblocked row of four stones, called a tessera, a win is imminent. 
+Therefore, an unblocked row of three stones, called a tria, is a serious 
+threat that should be blocked unless a stronger offensive move exists. An unblocked 
+row of three stones, if it contains one gap, is still considered a tria. 
+
+ETIQUETTE:
+It is a customary, but not mandatory, refinement of this game to announce tria or tessera when moving to make an open three, and also to call tria or tessera when making four
+in a row. 

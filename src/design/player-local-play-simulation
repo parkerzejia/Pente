@@ -1,0 +1,38 @@
+@startuml
+
+
+
+actor user0 #red
+
+user0 -> NewPenteWindow: user0 request it to open
+NewPenteWindow -> user0: ok, we start the program,\nnow choose the game version: \n Local /Network ??
+user0 -> NewPenteWindow: Local
+NewPenteWindow -> NewGameDialog:  Request of local
+NewGameDialog -> GamePenteLocal:  Request of local
+GamePenteLocal ->PenteWindow: actives
+GamePenteLocal ->PlayPane: actives
+GamePenteLocal->Stone: actives
+GamePenteLocal->PenteUtil: actives
+participant PenteUtil
+box "Addtional Service" #LightBlue
+participant InforBar  #99FF99
+participant QuitDialog #99FF99
+participant Tutorial #99FF99
+participant WinDialog #99FF99
+end box
+loop 15*15 times maximum
+	GamePenteLocal -> user0: Request accepted, you can start playing
+	user0 -> GamePenteLocal: placing piece by clicking on the showing GUI \n send the **coordinate**
+	GamePenteLocal ->PenteUtil: send the **coordinate** 
+	GamePenteLocal-> PenteWindow: recieve **coordinate**\n request for showing \n the piece on this coordinate
+	PenteWindow ->PlayPane:recieve **coordinate**\n  request for showing the piece
+	PenteWindow -> PenteUtil: send the **panel** 
+	PlayPane -> Stone: recieve **coordinate** \nrequest for drawing the piece
+	Stone -> PlayPane: request accepted, \n recieve **coordinate** 
+	PlayPane -> PenteWindow: request accepted 
+	PenteUtil-> user0: recieved **coordinate** and **panel**, calculating if continue the game 
+	PenteWindow->user0: **<size:15>showing the piece on the screen</size>**
+
+end
+
+@enduml
